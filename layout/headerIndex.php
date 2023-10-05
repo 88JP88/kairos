@@ -7,7 +7,7 @@
     <title>KAIROS</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="icon" type="image/x-icon" href="idea3.png">
+    <link rel="icon" type="image/x-icon" href="public/KAIROS2.png">
   
   </head>
   <body>
@@ -20,29 +20,29 @@
 
 
 <nav class="navbar bg-body-tertiary fixed-top">
-  <div class="container-fluid" style="background-color: #fcc627;">
-    <a class="navbar-brand" href="#"><img src="idea4.png" alt="KAIROS" width="60" height="60"></a>
+  <div class="container-fluid" style="background-color: #001219;">
+    <a class="navbar-brand" href="#"><img src="public/KAIROS.png" alt="KAIROS" width="60" height="60"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header" style="background-color: #fcc627;">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="idea3.png" alt="KAIROS" width="60" height="60"></h5>
+      <div class="offcanvas-header" style="background-color: #001219;">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="public/KAIROS2.png" alt="KAIROS" width="60" height="60"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body" >
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#" style="color: #C70039;">Home</a>
           </li>
           <li class="nav-item">
-          <button class="nav-link" onclick="changeSection('spam1');" id="alerts-tab1" data-bs-toggle="tab" data-bs-target="#alerts-tab-pane1" type="button" role="tab" aria-controls="alerts-tab-pane1" aria-selected="false" style="color: #3c3c3b;">Repositorios</button>
+          <button class="nav-link" onclick="changeSection('spam1');" id="alerts-tab1" data-bs-toggle="tab" data-bs-target="#alerts-tab-pane1" type="button" role="tab" aria-controls="alerts-tab-pane1" aria-selected="false" style="color: #C70039;">Repositorios</button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Foros</a>
+            <a class="nav-link" href="#" style="color: #C70039;">Foros</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #C70039;">
               Más
             </a>
             <ul class="dropdown-menu">
