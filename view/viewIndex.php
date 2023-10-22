@@ -1,8 +1,11 @@
 <?php
-require_once 'layout/headerIndex.php';
-require_once 'modal/modalLogIn.php';
+require_once 'layout/formLogin.php';
+//require_once 'layout/headerIndex.php';
+//require_once 'modal/modalLogIn.php';
 ?>
-<!DOCTYPE html>
+  
+<!--
+  <!DOCTYPE html>
 <html>
 <head>
     
@@ -22,4 +25,4 @@ require_once 'modal/modalLogIn.php';
         <img src="public/KAIROS.gif" alt="Descripción de la imagen">
     </div>
 </body>
-</html>
+</html> -->
