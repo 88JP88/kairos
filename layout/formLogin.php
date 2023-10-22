@@ -20,8 +20,8 @@
                     <form id="loginForm" action="controller/controllerValidateLogIn.php" method="post">
                       <div class="row">
                         <div class="col-2"></div>
-                        <div class="col-2"><img class="mt-3" src="../public/KAIROS2.png" alt="" width="72" height="57"></div>
-                        <div class="col-8"><h3 class="m-4 text-dark">KAIROS</h3></div>
+                        <div class="col-2"><img class="mt-3" src="public/KAIROS2.png" alt="" width="72" height="57"></div>
+                        <div class="col-8"><h3 class="m-4 text-light">KAIROS</h3></div>
                       </div>
                       <h4 class="m-4 fw-normal text-white">INGRESE SUS DATOS POR FAVOR</h4>
                       <div class="form-floating">
