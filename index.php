@@ -4,6 +4,6 @@
 
 
 <?php
-require_once 'view/viewIndex.php';
+require_once 'view/viewLogin.php';
 
 ?>

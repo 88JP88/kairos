@@ -21,7 +21,7 @@
 <!-- Barra de navegacion de prueba -->
 <nav class="navbar navbar-expand-lg bg-dark m-0 p-0" style="background-color: #001219;">
   <div class="container-fluid" style="background-color: #001219;">
-  <a class="navbar-brand" href="#"><img src="public/KAIROS.png" alt="KAIROS" width="60" height="60"></a>
+  <a class="navbar-brand" href="#"><img src="../public/KAIROS.png" alt="KAIROS" width="60" height="60"></a>
   <!--  <a class="navbar-brand text-light" href="../public/index.php">Speech App</a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -29,13 +29,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active text-light" aria-current="page" href="../public/index.php">Inicio</a>
+          <a class="nav-link active text-light" aria-current="page" href="../view/viewOption1.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active text-light" href="../public/options.php">Caracteristicas</a>
+          <a class="nav-link active text-light" href="">Caracteristicas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="../public/about.php">Acerca de</a>
+          <a class="nav-link text-light" href="">Acerca de</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +44,7 @@
           <ul class="dropdown-menu m-2">
             <li><a class="dropdown-item" style="border-radius: 0px;" href="#">Cerrar sesion</a></li>
             <li><a class="dropdown-item" style="border-radius: 0px;" href="#">Notificaciones</a></li>
-            <li><a class="dropdown-item" style="border-radius: 0px;" href="../public/user.php">Perfil</a></li>
+            <li><a class="dropdown-item" style="border-radius: 0px;" href="">Perfil</a></li>
           </ul>
         </li>
       </ul>
@@ -52,6 +52,14 @@
   </div>
 </nav>
 
+<div class="row mb-0 subMenu" style="background-color:#E4E4E4"> 
+
+  <form class="d-flex m-1 mr-4 ml-4" role="search">
+     <input class="form-control ms-2 me-1" type="search" placeholder="Search" aria-label="Search">
+     <button class="btn btn-outline-dark me-3" type="submit">Search</button>
+  </form>
+
+</div> 
 
 <!-- Barra de navegacion original -->
 <!--
