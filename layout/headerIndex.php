@@ -18,9 +18,45 @@
 </html>
 
 
-
-<nav class="navbar bg-body-tertiary fixed-top">
+<!-- Barra de navegacion de prueba -->
+<nav class="navbar navbar-expand-lg bg-dark m-0 p-0" style="background-color: #001219;">
   <div class="container-fluid" style="background-color: #001219;">
+  <a class="navbar-brand" href="#"><img src="public/KAIROS.png" alt="KAIROS" width="60" height="60"></a>
+  <!--  <a class="navbar-brand text-light" href="../public/index.php">Speech App</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" href="../public/index.php">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-light" href="../public/options.php">Caracteristicas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="../public/about.php">Acerca de</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Perfil
+          </a>
+          <ul class="dropdown-menu m-2">
+            <li><a class="dropdown-item" style="border-radius: 0px;" href="#">Cerrar sesion</a></li>
+            <li><a class="dropdown-item" style="border-radius: 0px;" href="#">Notificaciones</a></li>
+            <li><a class="dropdown-item" style="border-radius: 0px;" href="../public/user.php">Perfil</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Barra de navegacion original -->
+<!--
+<nav class="navbar bg-dark m-0 p-0 fixed-top" style="background-color: #001219;">
+  <div class="container-fluid m-0" style="background-color: #001219;">
     <a class="navbar-brand" href="#"><img src="public/KAIROS.png" alt="KAIROS" width="60" height="60"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -28,33 +64,33 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header" style="background-color: #001219;">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="public/KAIROS2.png" alt="KAIROS" width="60" height="60"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button type="button" class="btn-close" style="border-radius: 5px;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body" >
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" style="color: #C70039;">Home</a>
+          <li class="nav-item" style="border-radius: 5px; padding-left: 10px;">
+            <a class="nav-link active" aria-current="page" href="#" style="color: #C70039;border-radius: 5px;">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" style="border-radius: 5px; padding-left: 10px;">
           <button class="nav-link" onclick="changeSection('spam1');" id="alerts-tab1" data-bs-toggle="tab" data-bs-target="#alerts-tab-pane1" type="button" role="tab" aria-controls="alerts-tab-pane1" aria-selected="false" style="color: #C70039;">Repositorios</button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #C70039;">Foros</a>
+          <li class="nav-item" style="border-radius: 5px; padding-left: 10px;">
+            <a class="nav-link" href="#" style="color: #C70039; border-radius: 5px;">Foros</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #C70039;">
+          <li class="nav-item dropdown" style="border-radius: 5px; padding-left: 10px; padding-right: 10px; padding-bottom: 5px;">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #C70039; border-radius: 5px;">
               Más
             </a>
             <ul class="dropdown-menu">
-            <li><button type="button" class="dropdown-item" onclick="openModLogIn()" data-bs-toggle="tooltip" title="Tooltip">Iniciar Sesión</button></li>
+            <li><button type="button" style="border-radius: 0px;" class="dropdown-item" onclick="openModLogIn()" data-bs-toggle="tooltip" title="Tooltip">Iniciar Sesión</button></li>
               
               
-              <li><button type="button" class="dropdown-item" onclick="openModCreateUser()" data-bs-toggle="tooltip" title="Tooltip">Crear cuenta</button></li>
-              <li><button type="button" class="dropdown-item" onclick="openModValCode()" data-bs-toggle="tooltip" title="Tooltip">Código de validación</button></li>
+              <li><button type="button" style="border-radius: 0px;" class="dropdown-item" onclick="openModCreateUser()" data-bs-toggle="tooltip" title="Tooltip">Crear cuenta</button></li>
+              <li><button type="button" style="border-radius: 0px;" class="dropdown-item" onclick="openModValCode()" data-bs-toggle="tooltip" title="Tooltip">Código de validación</button></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="#">Acerca de nosotros</a></li>
+              <li><a class="dropdown-item m-0" style="border-radius: 0px;" href="#">Acerca de nosotros</a></li>
             </ul>
           </li>
         </ul>
@@ -66,6 +102,8 @@
     </div>
   </div>
 </nav>
+-->
+
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"></div>
