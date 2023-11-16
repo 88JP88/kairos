@@ -72,3 +72,8 @@
 #loginForm{
   background-color: #001219; /* Cambia el colosde fondo del formaulario de logueo*/
 }
+
+.calendario {
+  height: 100%;
+  width: 100%;
+}

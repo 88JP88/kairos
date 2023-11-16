@@ -1,6 +1,38 @@
 <?php  require_once '../layout/headerIndex.php';?>
 
-<div class="m-2  title"><h1>Opciones 1</h1></div>
+<script src="../script/calendar.js">
+/*
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    locale:"es",
+    headerToolBar:{
+      left:"prev,next,hoy",
+      center:"title",
+      right:"dayGridMonth"
+    }
+  });
+  calendar.render();
+}); */
+
+</script>
+
+<div class="container">
+    <div class="col md-8 m-2">
+         <div id='calendar'></div>
+    </div>
+</div>
+
+
+    
+         
+     
+
+
+
+
+<div class="m-4  title"><h1>Opciones 1</h1></div>
 
 <div class="container-fluid p-1">
 

@@ -8,12 +8,19 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="public/KAIROS2.png">
+    <link href="style/styleSession.css" rel="stylesheet">
   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+
+    <script src="../script/calendar.js"></script>
+   
   </head>
   <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-  <link href="style/styleSession.css" rel="stylesheet">
+
+ 
      </body>
 </html>
 
@@ -21,7 +28,7 @@
 <!-- Barra de navegacion de prueba -->
 <nav class="navbar navbar-expand-lg bg-dark m-0 p-0" style="background-color: #001219;">
   <div class="container-fluid" style="background-color: #001219;">
-  <a class="navbar-brand" href="#"><img src="../public/KAIROS.png" alt="KAIROS" width="60" height="60"></a>
+  <a class="navbar-brand" href="../view/viewIndex.php"><img src="../public/KAIROS.png" alt="KAIROS" width="60" height="60"></a>
   <!--  <a class="navbar-brand text-light" href="../public/index.php">Speech App</a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -56,10 +63,20 @@
 
   <form class="d-flex m-1 mr-4 ml-4" role="search">
      <input class="form-control ms-2 me-1" type="search" placeholder="Search" aria-label="Search">
-     <button class="btn btn-outline-dark me-3" type="submit">Search</button>
+     <button class="btn btn-outline-dark me-3" type="submit">Buscar</button>
   </form>
 
 </div> 
+
+<!-- CONTENEDOR DEL CALENDARIO-->
+<div class="container">
+    <div class="col md-8 m-2">
+         <div id='calendar'></div>
+    </div>
+</div>
+
+
+    
 
 <!-- Barra de navegacion original -->
 <!--
