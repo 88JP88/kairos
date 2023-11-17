@@ -1,6 +1,6 @@
 
-
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +12,17 @@
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
-
-    <script src="../script/calendar.js"></script>
+    <!--links fullcalendar-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.css">
+     <!--<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>-->
+   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
    
+
+    <!--scripts fullcalendar-->
+    <script src="../script/calendar.js"></script> 
+   
+
   </head>
   <body>
 
@@ -72,11 +79,148 @@
 <div class="container">
     <div class="col md-8 m-2">
          <div id='calendar'></div>
+
+            
+
     </div>
 </div>
 
+  <!-- CONTENEDOR DEL MODAL-->
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-dark btn-lg" style="height: 100%;" data-bs-toggle="modal" data-bs-target="#modalEvent" data-target="#modalEvent" onclick="getClientRoomsList();">
+                Evento
+              </button>
 
-    
+              <!-- Modal -->
+              <div class="modal fade" id="modalEvent" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="modalTitleId">Ingrese datos de agendamiento</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <div class="modal-body">
+                      <div class="container-fluid">
+                        
+                        <form action="">
+                            <div class="mb-3">
+                              <label for="" class="form-label" >Nombre del evento</label>
+                              <input type="text"
+                                class="form-control" name="" id="eventName" aria-describedby="helpId" placeholder="">
+                              <label for="">fecha inicio</label>
+                                <input type="datetime-local" id="dateStart">
+                              <label for="">fecha final</label>  
+                              <input type="datetime-local" id="dateEnd">
+                              <label for="">url</label>
+                              <input type="text" id="url">
+
+                              <small id="helpId" class="form-text text-muted">Help text</small>
+                              <select id="list-clientroom" class="form-control" name="currency" required onclick="onClientRoomSelect('assign')"></select>
+                              <option value="0">Selecciona room</option>
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary" id="lectorEvento">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+<script>
+ 
+  
+  document.getElementById("lectorEvento").addEventListener("click", function() {
+  var eventName = document.getElementById("eventName").value;
+  var dateStart = document.getElementById("dateStart").value;
+  var dateEnd = document.getElementById("dateEnd").value;
+  var url = document.getElementById("url").value;
+  
+  addNewEvent(eventName, dateStart, dateEnd, url);
+});
+
+var calendar; // Declarar calendar fuera de la función
+
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  calendar = new FullCalendar.Calendar(calendarEl, {
+	initialView: 'dayGridMonth',
+	locale: "es",
+	headerToolbar: {
+  	left: 'prev,next today',
+  	center: 'title',
+  	right: 'dayGridMonth,timeGridWeek,listWeek'
+	}
+  });
+  calendar.render();
+});
+
+function addNewEvent(eventName, dateStart, dateEnd, url) {
+  calendar.addEvent({
+	title: eventName,
+	start: dateStart,
+	end: dateEnd,
+	url: url
+  });
+}
+
+function getCalendarEvents() {
+  var events = calendar.getEvents();
+  console.log(events);
+}
+
+//LLAMAR LISTA ROOMS  DISPONIBLES
+async function getClientRoomsList() {
+
+  var reposSelect = document.getElementById("list-clientroom");
+  while (reposSelect.firstChild) {
+    reposSelect.removeChild(reposSelect.firstChild);
+  }
+
+
+
+
+	fetch('https://dev-kairosGateway.lugma.tech/kairosGateway/apiCompanies/v1/getClientRooms/UfbHdZaJ 6WclAmsaP9H7SR2WmpDbl1OL9/4e6baba0/all')
+  .then(response => response.json())
+  .then(data => {
+    data.clientRoom.forEach(info => {
+      const option = document.createElement("option");
+      option.value = info.roomId;
+      option.text = info.comments;
+      reposSelect.add(option);
+    });
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+
+ }
+
+
+
+</script> 
+<script>
+  var modalId = document.getElementById('modalId');
+
+  modalId.addEventListener('show.bs.modal', function (event) {
+      // Button that triggered the modal
+      let button = event.relatedTarget;
+      // Extract info from data-bs-* attributes
+      let recipient = button.getAttribute('data-bs-whatever');
+
+    // Use above variables to manipulate the DOM
+  });
+</script>
+
+
+
+
+<!-- Optional: Place to the bottom of scripts -->
+<script>
+  const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+
+</script>                               
 
 <!-- Barra de navegacion original -->
 <!--
