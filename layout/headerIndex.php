@@ -8,7 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="public/KAIROS2.png">
-    <link href="style/styleSession.css" rel="stylesheet">
+    <link href="../style/styleSession.css" rel="stylesheet">
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
@@ -18,17 +18,10 @@
    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/locales-all.js"></script>
    
-
-    <!--scripts fullcalendar-->
-    <script src="../script/calendar.js"></script> 
-   
-
   </head>
   <body>
 
-
- 
-     </body>
+  </body>
 </html>
 
 
@@ -85,6 +78,7 @@
     </div>
 </div>
 
+
   <!-- CONTENEDOR DEL MODAL-->
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-dark btn-lg" style="height: 100%;" data-bs-toggle="modal" data-bs-target="#modalEvent" data-target="#modalEvent" onclick="getClientRoomsList();">
@@ -94,9 +88,12 @@
               <!-- Modal -->
               <div class="modal fade" id="modalEvent" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                  <div class="modal-content">
+                  <div class="modal-content" id="modalBackglound">
                       <div class="modal-header">
-                          <h5 class="modal-title" id="modalTitleId">Ingrese datos de agendamiento</h5>
+                      <div class="row">
+                     <div class="col-2"></div>
+                     <div class="col-2"><img class="mt-3" src="../public/KAIROS2.png" alt="" width="72" height="57"></div>
+                     <div class="col-8"><h1 class="m-4 text-light">KAIROS</h1></div></div>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                     <div class="modal-body">
@@ -104,19 +101,28 @@
                         
                         <form action="">
                             <div class="mb-3">
-                              <label for="" class="form-label" >Nombre del evento</label>
-                              <input type="text"
-                                class="form-control" name="" id="eventName" aria-describedby="helpId" placeholder="">
-                              <label for="">fecha inicio</label>
-                                <input type="datetime-local" id="dateStart">
-                              <label for="">fecha final</label>  
-                              <input type="datetime-local" id="dateEnd">
-                              <label for="">url</label>
-                              <input type="text" id="url">
+                              <label for="" class="form-label text-light">Nombre del evento</label>
+                              <input type="text" class="form-control" id="eventName">
 
-                              <small id="helpId" class="form-text text-muted">Help text</small>
-                              <select id="list-clientroom" class="form-control" name="currency" required onclick="onClientRoomSelect('assign')"></select>
-                              <option value="0">Selecciona room</option>
+                              <label for="" class="text-light">fecha inicio</label>
+                              <input type="datetime-local" class="form-control"  id="dateStart">
+
+                              <label for="" class="text-light">fecha final</label>  
+                              <input type="datetime-local" class="form-control" id="dateEnd">
+                             
+                              <input type="hidden" id="url" >
+
+                              <label for="floatingInput" class="text-light">Seleccione el estado</label> 
+                                <select class="form-select form-select-sm" aria-label="form-select-sm example" id="state">
+                                  <option selected>Estado</option>
+                                  <option value="Agendado">Agendado</option>
+                                  <option value="Pendiente">Pendiente</option>
+                                  <option value="Disponible">Disponible</option>
+                                </select>
+
+                              <label for="floatingInput" class="text-light">Seleccione el sala</label>  
+                                <select id="list-clientroom" class="form-control" name="currency" required onclick="onClientRoomSelect('assign')"></select>
+                                <option value="0"></option>
                             </div>
                         </form>
                       </div>
@@ -128,78 +134,67 @@
                   </div>
                 </div>
               </div>
-<script>
- 
-  
-  document.getElementById("lectorEvento").addEventListener("click", function() {
-  var eventName = document.getElementById("eventName").value;
-  var dateStart = document.getElementById("dateStart").value;
-  var dateEnd = document.getElementById("dateEnd").value;
-  var url = document.getElementById("url").value;
-  
-  addNewEvent(eventName, dateStart, dateEnd, url);
-});
 
-var calendar; // Declarar calendar fuera de la función
+  <!-- CONTENEDOR DEL MODAL
+            
+              <button type="button" class="btn btn-dark btn-lg" style="height: 100%;" data-bs-toggle="modal" data-bs-target="#modalEvent" data-target="#modalEvent" onclick="getClientRoomsList();">
+                Evento
+              </button>
 
-document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
-  calendar = new FullCalendar.Calendar(calendarEl, {
-	initialView: 'dayGridMonth',
-	locale: "es",
-	headerToolbar: {
-  	left: 'prev,next today',
-  	center: 'title',
-  	right: 'dayGridMonth,timeGridWeek,listWeek'
-	}
-  });
-  calendar.render();
-});
+             
+              <div class="modal fade" id="modalEvent" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                    <div class="row">
+                     <div class="col-2"></div>
+                     <div class="col-2"><img class="mt-3" src="../public/KAIROS2.png" alt="" width="72" height="57"></div>
+                     <div class="col-8"><h1 class="m-4 text-light">KAIROS</h1></div>
+                   </div>
+                    </div>
+                  
+                    <div class="modal-body">
+                      <div class="container-fluid">
+                        
+                        <form action="">
+                           
+                          <label for="floatingInput" class="text-light">Nombre del evento</label>
+                          <input type="text" class="form-control mb-3" name="eventName" id="eventName">
+                              
+                          <label for="floatingInput" class="text-light">Fecha de inicio</label>
+                          <input type="datetime-local" id="dateStart" class="form-control mb-3">
+                              
+                          <label for="floatingInput" class="text-light">Fecha final</label>
+                          <input type="datetime-local" id="dateEnd" class="form-control mb-3">
+                         
+                          <label for="floatingInput" class="text-light">Seleccione el estado</label> 
+                          <select class="form-select form-select-sm" aria-label="form-select-sm example" id="state">
+                            <option selected>Estado</option>
+                            <option value="Agendado">Agendado</option>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Disponible">Disponible</option>
+                          </select>
+                   
+                          <label for="floatingInput" class="text-light">Seleccione la sala</label>
+                          <select id="list-clientroom" class="form-control" name="currency" required onclick="onClientRoomSelect('assign')"></select>
+                          <option value="0">Selecciona room</option>
+                              
+                        </form>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary" id="lectorEvento">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-function addNewEvent(eventName, dateStart, dateEnd, url) {
-  calendar.addEvent({
-	title: eventName,
-	start: dateStart,
-	end: dateEnd,
-	url: url
-  });
-}
+              -->
+    <!--scripts fullcalendar-->
+    <script src="../script/calendar.js"></script> 
+   
 
-function getCalendarEvents() {
-  var events = calendar.getEvents();
-  console.log(events);
-}
-
-//LLAMAR LISTA ROOMS  DISPONIBLES
-async function getClientRoomsList() {
-
-  var reposSelect = document.getElementById("list-clientroom");
-  while (reposSelect.firstChild) {
-    reposSelect.removeChild(reposSelect.firstChild);
-  }
-
-
-
-
-	fetch('https://dev-kairosGateway.lugma.tech/kairosGateway/apiCompanies/v1/getClientRooms/UfbHdZaJ 6WclAmsaP9H7SR2WmpDbl1OL9/4e6baba0/all')
-  .then(response => response.json())
-  .then(data => {
-    data.clientRoom.forEach(info => {
-      const option = document.createElement("option");
-      option.value = info.roomId;
-      option.text = info.comments;
-      reposSelect.add(option);
-    });
-  })
-  .catch(error => {
-    console.error("Error:", error);
-  });
-
- }
-
-
-
-</script> 
 <script>
   var modalId = document.getElementById('modalId');
 

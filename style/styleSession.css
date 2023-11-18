@@ -72,8 +72,24 @@
 #loginForm{
   background-color: #001219; /* Cambia el colosde fondo del formaulario de logueo*/
 }
+#modalBackglound{
+  background-color: #1a252f; /* Cambia el colosde fondo del formaulario de logueo*/
+}
 
 .calendario {
   height: 100%;
   width: 100%;
+}
+/* Variables de className para fullcalendar */
+.Agendado {
+  background-color: #7071E8;
+  color: #000000;
+}
+.Disponible {
+  background-color: #A7D397;
+  color: #000000;
+}
+.Pendiente {
+  background-color: #BE3144;
+  color: #000000;
 }

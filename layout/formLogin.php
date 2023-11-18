@@ -25,11 +25,11 @@
                       </div>
                       <h4 class="m-4 fw-normal text-white">INGRESE SUS DATOS POR FAVOR</h4>
                       <div class="form-floating">
-                        <input type="email" class="form-control mb-3" name="correo" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" class="form-control mb-3" name="correo" id="floatingInput" placeholder="name@example.com" >
                         <label for="floatingInput">Correo electronico</label>
                       </div>
                       <div class="form-floating">
-                        <input type="password" class="form-control mb-3" name="contraseña" id="floatingPassword" placeholder="Password">
+                        <input type="password" class="form-control mb-3" name="contraseña" id="floatingPassword" placeholder="Password" >
                         <label for="floatingPassword">Contraseña</label>
                       </div>
                       <button class="w-100 btn btn-lg btn-primary1" type="submit" name="btnAccion" value="login">Confirmar</button>
@@ -37,7 +37,10 @@
                     </form>
                     <button class="btn btn-primary1 w-100 mb-1" onclick="openModCloseSessions();">Cerrar sesion en otros dispositivos</button>
                     <p class="mt-1 m-3 text-white">&copy; Lugma.tech 2023</p>
+
+                    
                   </div>
+                  <h1 class="">ESTE ES UN AMBIENTE EN DESARROLLO</h1>
               <div class="col-12 col-sm-2 col-md-3 col-lg-4 col-xl-4">
               </div>   
             </div>
